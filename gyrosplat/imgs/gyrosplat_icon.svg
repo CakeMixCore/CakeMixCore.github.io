@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <title>GyroSplat</title>
+  <defs>
+    <linearGradient id="heat" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#6B2A7B"/><stop offset=".38" stop-color="#E0452B"/><stop offset=".72" stop-color="#F7931E"/><stop offset="1" stop-color="#FFD23F"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 7V22M64 106V121" stroke="#0B2238" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="45" fill="#3A1C71" stroke="#0B2238" stroke-width="8"/>
+  <ellipse cx="64" cy="64" rx="23" ry="47" transform="rotate(38 64 64)" fill="none" stroke="url(#heat)" stroke-width="7"/>
+  <ellipse cx="64" cy="64" rx="21" ry="15" transform="rotate(-28 64 64)" fill="#E0452B"/>
+  <ellipse cx="67" cy="61" rx="14" ry="11" transform="rotate(-28 67 61)" fill="#F7931E"/>
+  <ellipse cx="71" cy="57" rx="7" ry="6" fill="#FFD23F"/>
+  <path d="M13 52C-1 67 26 84 61 86C96 88 125 76 119 64" fill="none" stroke="#0B2238" stroke-width="10" stroke-linecap="round"/>
+  <path d="M15 61C20 70 40 77 63 78C86 79 105 74 114 68" fill="none" stroke="url(#heat)" stroke-width="5" stroke-linecap="round"/>
+</svg>
