@@ -2819,10 +2819,26 @@ html:not([data-egg]) nav.toc .toc-ic[data-pp="cvd"], html:not([data-egg]) nav.to
 p.logos img.egg-jig { animation: eggJig 0.7s ease-in-out; }
 @media (prefers-reduced-motion: reduce) { p.logos img.egg-jig { animation: none; } }
 
+
+
+.moC-ax > .moC-cmp { align-self: start; width: 100%; }
+.sflip > :not(.sflip-s) { align-self: flex-start; }
+
+
+
+.pins > .pinchip { position: relative; padding: 0.2rem 0.4rem; }
+.pins > .pinchip > span { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.pins > .pinchip[aria-expanded="true"] { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+
+
+
+html[data-qicons="grey"] svg.w3-ic { filter: grayscale(1); }
+
 </style>
 <script>  try { const v = localStorage.getItem("cvd"); if (v === "rg" || v === "by") document.documentElement.setAttribute("data-cvd", v); } catch (e) {} </script>
 <script>  try { const t = localStorage.getItem("theme"); if (localStorage.getItem("cvd-egg") === "1" && (t === "light" || t === "dark")) document.documentElement.setAttribute("data-theme", t); } catch (e) {} </script>
 <script>  try { const r = document.documentElement; if (localStorage.getItem("cvd-egg") === "1") r.setAttribute("data-egg", "1"); else r.removeAttribute("data-cvd"); } catch (e) { document.documentElement.removeAttribute("data-cvd"); } </script>
+<script>  try { if (localStorage.getItem("cvd-egg") === "1" && localStorage.getItem("qicons") === "grey") document.documentElement.setAttribute("data-qicons", "grey"); } catch (e) {} </script>
 </head>
 <body>
 <header class="mast">
@@ -2921,7 +2937,7 @@ p.logos img.egg-jig { animation: eggJig 0.7s ease-in-out; }
 
 
   <section class="col">
-    <div class="symrow symrow-h chaprow"><h2><span class="sec">1</span>5D data is too large to keep permanently</h2><div class="pins" role="group" aria-label="Folded parts of this chapter"><button type="button" class="pinchip mtip" data-pin="f2-form" aria-controls="f2-form" aria-expanded="false" data-tip="The gyrokinetic equation, the potential and the heat flux"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><path d="M20.5 6.2V3.5h-11l6.2 6.5-6.2 6.5h11v-2.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg><span>Gyrokinetic equations</span></button><button type="button" class="pinchip mtip" data-pin="f2-vel" aria-controls="f2-vel" aria-expanded="false" data-tip="How the two velocities enter the potential and the heat flux"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><circle cx="8" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/><circle cx="20" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/><circle cx="8" cy="12.4" r="1" fill="currentColor"/><circle cx="20" cy="10" r="1" fill="currentColor"/></svg><span>Cold and hot ions</span></button><button type="button" class="pinchip mtip" data-pin="sz-fold" aria-controls="sz-fold" aria-expanded="false" data-tip="The size of one snapshot and of one run"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect x="3" y="4" width="24" height="4.4" rx="0.8" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.1"/><rect x="3" y="12" width="4.6" height="4.4" rx="0.8" fill="currentColor"/><path d="M11 14.2h9M17.4 11.6 20.2 14.2l-2.8 2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/></svg><span>Snapshot sizes</span></button></div></div>
+    <div class="symrow symrow-h chaprow"><h2><span class="sec">1</span>5D data is too large to keep permanently</h2><div class="pins" role="group" aria-label="Folded parts of this chapter"><button type="button" class="pinchip mtip" data-pin="f2-form" aria-controls="f2-form" aria-expanded="false" data-tip="The gyrokinetic equation, the potential and the heat flux"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><path d="M20.5 6.2V3.5h-11l6.2 6.5-6.2 6.5h11v-2.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg><span>Gyrokinetic equations</span></button><button type="button" class="pinchip mtip" data-pin="f2-vel" aria-controls="f2-vel" aria-expanded="false" data-tip="How the two velocities enter the potential and the heat flux"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><circle cx="8" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/><circle cx="20" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/><circle cx="8" cy="12.4" r="1" fill="currentColor"/><circle cx="20" cy="10" r="1" fill="currentColor"/></svg><span>Cold and hot ions</span></button><button type="button" class="pinchip mtip" data-pin="sz-fold" aria-controls="sz-fold" aria-expanded="false" data-tip="The size of one snapshot and of one run"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><path d="M8 7.5h10v10H8zM8 7.5l4-4h10l-4 4M22 3.5v10l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/><path d="M13 7.5v10M8 12.5h10M10 5.5h10M13 7.5l4-4M20 5.5v10M18 12.5l4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9" opacity="0.7"/></svg><span>Snapshot sizes</span></button></div></div>
   </section>
   <div class="pinslot" id="pinslot-1"></div>
   <section class="col">
@@ -3040,8 +3056,8 @@ p.logos img.egg-jig { animation: eggJig 0.7s ease-in-out; }
 
   <section class="col">
     <p>Every mode carries heat outward and inward at once. Here 56.5 out and 17.0 in give a net of 39.6. A small error in δf can change that balance substantially, so <b>a good fit of δf does not guarantee a good flux</b>.</p>
-    <p><b>Snapshot size.</b> Each dimension of the 5D snapshot needs its own grid. The sizes multiply to give 32 × 8 velocities × 16 × 85 positions × 32 complex modes, 89 MB for one snapshot of this small run. A run has to compute hundreds of such snapshots to estimate the heat flux well, and runs used to study a reactor are far larger. <button type="button" class="pinref mtip" data-pin="sz-fold" aria-controls="sz-fold" aria-expanded="false" data-tip="The size of one snapshot and of one run"><svg class="pinic" viewBox="0 0 30 20" width="21" height="14" aria-hidden="true"><rect x="3" y="4" width="24" height="4.4" rx="0.8" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.1"/><rect x="3" y="12" width="4.6" height="4.4" rx="0.8" fill="currentColor"/><path d="M11 14.2h9M17.4 11.6 20.2 14.2l-2.8 2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/></svg><span>Snapshot sizes</span></button> compares these sizes with larger runs.</p>
-    <details class="more pin col" id="sz-fold" data-chap="1"><summary class="mtip" data-tip="The size of one snapshot and of one run"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect x="3" y="4" width="24" height="4.4" rx="0.8" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.1"/><rect x="3" y="12" width="4.6" height="4.4" rx="0.8" fill="currentColor"/><path d="M11 14.2h9M17.4 11.6 20.2 14.2l-2.8 2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/></svg><span>Snapshot sizes</span></summary>
+    <p><b>Snapshot size.</b> Each dimension of the 5D snapshot needs its own grid. The sizes multiply to give 32 × 8 velocities × 16 × 85 positions × 32 complex modes, 89 MB for one snapshot of this small run. A run has to compute hundreds of such snapshots to estimate the heat flux well, and runs used to study a reactor are far larger. <button type="button" class="pinref mtip" data-pin="sz-fold" aria-controls="sz-fold" aria-expanded="false" data-tip="The size of one snapshot and of one run"><svg class="pinic" viewBox="0 0 30 20" width="21" height="14" aria-hidden="true"><path d="M8 7.5h10v10H8zM8 7.5l4-4h10l-4 4M22 3.5v10l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/><path d="M13 7.5v10M8 12.5h10M10 5.5h10M13 7.5l4-4M20 5.5v10M18 12.5l4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9" opacity="0.7"/></svg><span>Snapshot sizes</span></button> compares these sizes with larger runs.</p>
+    <details class="more pin col" id="sz-fold" data-chap="1"><summary class="mtip" data-tip="The size of one snapshot and of one run"><svg class="symic" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><path d="M8 7.5h10v10H8zM8 7.5l4-4h10l-4 4M22 3.5v10l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/><path d="M13 7.5v10M8 12.5h10M10 5.5h10M13 7.5l4-4M20 5.5v10M18 12.5l4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9" opacity="0.7"/></svg><span>Snapshot sizes</span></summary>
     <div class="tiles tiles-sm">
       <div class="tile"><div class="v">89 MB</div><div class="l">one snapshot of this small grid (22.3 million values)</div></div>
       <div class="tile"><div class="v">63 GB</div><div class="l">what GKW wrote for this one run</div></div>
@@ -5470,8 +5486,8 @@ const FTIP = (() => {
     d.style.left = x + "px"; d.style.top = y + "px"; };
   const hide = () => { clearTimeout(timer); clearTimeout(auto); d.hidden = true; if (cur) cur.removeAttribute("aria-describedby"); cur = null; };
   document.addEventListener("pointerdown", e => { touch = e.pointerType === "touch"; }, true);
-  document.addEventListener("pointerover", e => { const t = e.target.closest && e.target.closest(".mtip"); if (!t || e.pointerType === "touch") return; clearTimeout(timer); timer = setTimeout(() => show(t), t.matches("button, summary, .kind, .howto, .nou") ? 350 : 900); });
-  document.addEventListener("pointerout", e => { const t = e.target.closest && e.target.closest(".mtip"); if (t && e.pointerType !== "touch") hide(); });
+  document.addEventListener("pointerover", e => { const t = e.target.closest && e.target.closest(".mtip"); if (!t || e.pointerType === "touch") return; const rt = e.relatedTarget; if (rt && rt.closest && rt.closest(".mtip") === t) return; clearTimeout(timer); timer = setTimeout(() => show(t), t.matches("button, summary, .kind, .howto, .nou") ? 350 : 900); });
+  document.addEventListener("pointerout", e => { const t = e.target.closest && e.target.closest(".mtip"); const rt = e.relatedTarget; if (t && e.pointerType !== "touch" && !(rt && rt.closest && rt.closest(".mtip") === t)) hide(); });
   document.addEventListener("focusin", e => { if (e.target.classList && e.target.classList.contains("mtip") && !touch) show(e.target); });
   document.addEventListener("focusout", e => { if (e.target.classList && e.target.classList.contains("mtip")) hide(); });
 
@@ -10837,6 +10853,30 @@ MO.list = ["C"];
 
 
 
+(function arGuard() {
+  if (!window.ResizeObserver) return;
+  const ratio = e => { const a = getComputedStyle(e).aspectRatio; if (!a || a === "auto") return 0; const p = a.split("/").map(x => parseFloat(x)); return p.length > 1 && p[1] ? p[0] / p[1] : p[0] || 0; };
+  const room = e => { const r = e.getBoundingClientRect(); if (r.width >= 40) return r.width; const p = e.parentElement, x = e.classList.contains("moC-cmp") && p.querySelector(":scope > .moC-xt"); if (x) return x.getBoundingClientRect().width; const sl = p.querySelector(":scope > .sflip-s"), g = parseFloat(getComputedStyle(p).columnGap) || 0; return p.getBoundingClientRect().width - (sl ? sl.getBoundingClientRect().width + g : 0); };
+  const fit = e => { if (!e.isConnected || getComputedStyle(e).display === "none") return; const W = room(e); if (W < 40) return; const k = e._arK || ratio(e); if (!k) return; const h0 = e.getBoundingClientRect().height; if (e._arK || h0 < 0.6 * W / k) { e._arK = k; const h = (W / k).toFixed(1) + "px"; if (e.style.height !== h) e.style.height = h; } };
+  const ro = new ResizeObserver(L => L.forEach(x => { const e = x.target; if (e.classList.contains("sflip") || e.classList.contains("moC-ax")) e.querySelectorAll(":scope > .moC-cmp, :scope > :not(.sflip-s):not(.moC-yl):not(.moC-yt):not(.moC-xt):not(.moC-xl)").forEach(fit); else fit(e); }));
+  document.querySelectorAll(".moC-ax > .moC-cmp, .sflip > :not(.sflip-s)").forEach(e => { ro.observe(e); ro.observe(e.parentElement); });
+})();
+
+
+
+(function qIcons() {
+  const root = document.documentElement, KEY = "qicons", egg = () => { try { return localStorage.getItem("cvd-egg") === "1"; } catch (e) { return false; } };
+  const get = () => { try { const v = localStorage.getItem(KEY); return v === "grey" || v === "off" ? v : "colour"; } catch (e) { return "colour"; } };
+  const setW3 = s => { const b = document.querySelector(`.w3-sw button[data-s="${s}"]`); if (b && root.getAttribute("data-w3i") !== s) b.click(); };
+  const apply = v => { if (v === "grey") root.setAttribute("data-qicons", "grey"); else root.removeAttribute("data-qicons"); setW3(v === "off" ? "0" : "B"); };
+  const set = v => { try { if (v === "colour") localStorage.removeItem(KEY); else localStorage.setItem(KEY, v); } catch (e) {} apply(v); };
+  if (egg() && get() !== "colour") apply(get());
+  const K = window.PP && PP.kinds.cvd; if (!K) return; const b1 = K.body;
+  K.body = () => { const w = b1(), l = document.createElement("p"), g = document.createElement("div"), cur = get(); l.className = "thm-l"; l.id = "qic-l"; l.textContent = "Icons"; g.className = "seg thm-g qic-g"; g.setAttribute("role", "group"); g.setAttribute("aria-labelledby", "qic-l"); [["colour", "Colour"], ["grey", "Grey"], ["off", "Off"]].forEach(([v, n]) => { const b = document.createElement("button"); b.type = "button"; b.dataset.q = v; b.textContent = n; b.setAttribute("aria-pressed", String(v === cur)); b.addEventListener("click", () => { set(v); g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); }); g.appendChild(b); }); const anchor = w.querySelectorAll(":scope > .thm-l")[1] || null; w.insertBefore(l, anchor); w.insertBefore(g, anchor); return w; };
+})();
+
+
+
 (function pins() {
   const folds = [...document.querySelectorAll("details.pin")]; if (!folds.length) return;
   const calm = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -10845,7 +10885,7 @@ MO.list = ["C"];
   const slot = d => document.getElementById("pinslot-" + d.dataset.chap);
   const up = d => !!(d.parentElement && d.parentElement.classList.contains("pinslot"));
   const triggers = d => [...document.querySelectorAll('[data-pin="' + d.id + '"]')], isChip = b => b.classList.contains("pinchip");
-  const sync = d => triggers(d).forEach(b => { b.setAttribute("aria-expanded", String(d.open && (isChip(b) || !up(d)))); if (isChip(b)) b.hidden = d.open && up(d); });
+  const sync = d => triggers(d).forEach(b => b.setAttribute("aria-expanded", String(d.open && (isChip(b) || !up(d)))));
 
   const keep = (anchor, fn) => { const y = anchor.getBoundingClientRect().top; fn(); const dy = anchor.getBoundingClientRect().top - y; if (Math.abs(dy) > 1) scrollBy(0, dy); };
   const place = (d, top) => { if (top) { const s = slot(d), nx = [...s.children].find(x => rank.get(x) > rank.get(d)); s.insertBefore(d, nx || null); } else home.get(d).after(d); };
@@ -10858,7 +10898,7 @@ MO.list = ["C"];
     d.addEventListener("toggle", () => { const was = up(d); if (!d.open && was) place(d, false); sync(d);
       if (!d.open && was && chip && (document.activeElement === document.body || document.activeElement === sum)) chip.focus({ preventScroll: true }); });
     triggers(d).forEach(b => b.addEventListener("click", () => {
-      if (isChip(b)) { show(d, true, b.closest(".chaprow") || b); if (sum) sum.focus({ preventScroll: true }); }
+      if (isChip(b)) { if (d.open && up(d)) d.open = false; else show(d, true, b.closest(".chaprow") || b); }
       else if (d.open && !up(d)) d.open = false;
       else show(d, false, b); }));
     sync(d);
