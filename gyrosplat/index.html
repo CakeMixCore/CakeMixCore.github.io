@@ -10968,7 +10968,7 @@ MO.list = ["C"];
   const sm = u => u <= 0 ? 0 : u >= 1 ? 1 : u * u * (3 - 2 * u), io = u => u <= 0 ? 0 : u >= 1 ? 1 : u * u * u * (u * (6 * u - 15) + 10);
 
 
-  const IC = cvdIcon(), INK = IC.ink, DISC = IC.disc, HEAT = IC.heat;
+  let IC = cvdIcon(), INK = IC.ink, DISC = IC.disc, HEAT = IC.heat;
   const hex = s => [1, 3, 5].map(i => parseInt(s.slice(i, i + 2), 16)), mix = (a, b, w) => a.map((v, i) => Math.round(v + (b[i] - v) * w)), rgb = c => "rgb(" + c.join(",") + ")";
   const heatAt = s => { s = Math.max(0, Math.min(1, s)); let j = 0; while (j < HEAT.length - 2 && s > HEAT[j + 1][0]) j++; const [o0, c0] = HEAT[j], [o1, c1] = HEAT[j + 1]; return mix(hex(c0), hex(c1), (s - o0) / (o1 - o0)); };
   const ell = (cx, cy, rx, ry, deg) => { const q = new Path2D(); q.ellipse(cx, cy, rx, ry, deg * Math.PI / 180, 0, 2 * Math.PI); return q; };
@@ -10984,7 +10984,7 @@ MO.list = ["C"];
       out.push({ x: P[0] + (Q[0] - P[0]) * f, y: P[1] + (Q[1] - P[1]) * f, rx: 0.6 * len / n, ry: wide, a: Math.atan2(Q[1] - P[1], Q[0] - P[0]), c: colour(P[0] + (Q[0] - P[0]) * f, P[1] + (Q[1] - P[1]) * f, P), L: Lr }); }
     return out; };
   const cubic = segs => { const o = []; segs.forEach((g, si) => { for (let i = si ? 1 : 0; i <= 200; i++) { const u = i / 200, v = 1 - u; o.push([0, 1].map(d => v * v * v * g[0][d] + 3 * u * v * v * g[1][d] + 3 * u * u * v * g[2][d] + u * u * u * g[3][d])); } }); return o; };
-  const SRC = (() => { const out = [], cr = Math.cos(38 * Math.PI / 180), sr = Math.sin(38 * Math.PI / 180), disc = hex(DISC), ink = hex(INK);
+  const mkSRC = () => { const out = [], cr = Math.cos(38 * Math.PI / 180), sr = Math.sin(38 * Math.PI / 180), disc = hex(DISC), ink = hex(INK);
     [[64, 64, 21, 15, -28, IC.core[0]], [67, 61, 14, 11, -28, IC.core[1]], [71, 57, 7, 6, 0, IC.core[2]]].forEach(([x, y, rx, ry, d, c]) => out.push({ x, y, rx, ry, a: d * Math.PI / 180, c: hex(c), L: 3, core: 1 }));
     const nd = 51, rb = 0.62 * Math.sqrt(Math.PI * 41 * 41 / nd), Rd = 41 - rb;
     for (let i = 0; i < nd; i++) { const r = Rd * Math.sqrt((i + 0.5) / nd), w = i * 2.39996; out.push({ x: 64 + r * Math.cos(w), y: 64 + r * Math.sin(w), rx: rb, ry: rb, a: 0, c: disc, L: 1 }); }
@@ -10994,7 +10994,11 @@ MO.list = ["C"];
     out.push(...along(cubic([[[15, 61], [20, 70], [40, 77], [63, 78]], [[63, 78], [86, 79], [105, 74], [114, 68]]]), 8, 2.5, (x, y) => heatAt(((x - 15) / 99 - (y - 61) / 17.13 + 1) / 2), 5));
     out.push({ x: 64, y: 8.75, rx: 6.25, ry: 4.5, a: Math.PI / 2, c: ink, L: 6 }, { x: 64, y: 119.25, rx: 6.25, ry: 4.5, a: Math.PI / 2, c: ink, L: 6 });
     out.forEach(q => { q.t0 = A + 0.2 * Math.min(1, Math.hypot(q.x - 64, q.y - 64) / 60); });
-    return out; })();
+    return out; };
+  const SRC = mkSRC();
+
+  const recolour = () => { const n = cvdIcon(); if (!n || n === IC) return; IC = n; INK = n.ink; DISC = n.disc; HEAT = n.heat; PARTS.forEach(q => { if (q.c) q.c = INK; }); const F = mkSRC(); SRC.forEach((q, j) => { if (F[j]) q.c = F[j].c; }); };
+  new MutationObserver(recolour).observe(document.documentElement, { attributes: true, attributeFilter: ["data-cvd"] });
 
 
   const prepare = () => { if (egg) return egg; if (typeof D !== "object" || !D.snap || !D.snap.f) return null;
